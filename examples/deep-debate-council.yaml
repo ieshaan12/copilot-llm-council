@@ -1,0 +1,33 @@
+# Debate Council Configuration
+name: debate-council
+description: A council that debates and refines solutions over multiple rounds
+strategy: debate
+max_rounds: 10
+
+members:
+  - name: problem-solver
+    role: principal_engineer
+    model: gpt-5
+    system_prompt: |
+      You are a pragmatic problem solver. Focus on finding practical,
+      implementable solutions. Consider trade-offs between complexity
+      and maintainability.
+
+  - name: devils-advocate
+    role: devil_advocate
+    model: claude-sonnet-4
+    system_prompt: |
+      You challenge assumptions and explore alternative approaches.
+      Point out potential issues but also suggest alternatives.
+
+  - name: synthesizer
+    role: synthesizer
+    model: gpt-5
+    system_prompt: |
+      You bring together different viewpoints and create a cohesive
+      recommendation. Highlight areas of agreement and key trade-offs.
+
+logging:
+  level: INFO
+  file: ./logs/debate.log
+  format: json

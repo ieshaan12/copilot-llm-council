@@ -1,0 +1,31 @@
+# Sample Council Configuration
+name: code-review-council
+description: A council for reviewing code changes with multiple perspectives
+strategy: parallel
+max_rounds: 1
+
+members:
+  - name: architect
+    role: principal_engineer
+    model: gpt-5
+    # Let the principal engineer access git and file tools
+    allowed_tools:
+      - shell(git:*)
+      - read
+
+  - name: security-reviewer
+    role: security_expert
+    model: claude-sonnet-4
+    # Security expert should only read, not execute
+    denied_tools:
+      - shell(*)
+      - write
+
+  - name: critic
+    role: critic
+    model: gpt-5
+
+logging:
+  level: INFO
+  file: ./logs/code-review.log
+  format: json
