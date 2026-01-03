@@ -2,6 +2,10 @@
 
 A Python-based orchestration system that leverages GitHub Copilot CLI to create multi-agent "councils" where different LLM personas deliberate on tasks together.
 
+## Motivation (non-AI)
+
+My motivation behind this was (Andrej Karpathy's LLM Council)[https://github.com/karpathy/llm-council], I figured I might as well do something from vibe coding and everything I need to using CLI, I don't want to go anywhere I just want to be able to do this from my CLI, and simple Copilot. I am too used to using GitHub Copilot and thus found it to be the most easy path to build for me. This is almost completely vibecoded around 4am. I've written the scaffold of the specs that I wanted in terms of what I want it to do with what functionality, but for the rest of the part I let it follow best practices, which I personally never bothered with for hobby projects like ruff / type checking (especially this being Python). This has been a fun exercise and I may use it for more things in my project, especially with the scope of this being in line with controlling data access in terms of MCP Servers / Tool usage etc.
+
 ## Overview
 
 Copilot LLM Council allows you to:
